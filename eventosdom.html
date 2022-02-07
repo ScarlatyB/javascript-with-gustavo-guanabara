@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        div{
+            background-color: green;
+            color: honeydew;
+            width: 100px;
+            height: 100px;
+            line-height: 100px;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="area">
+        Clique aqui!
+    </div>
+
+<!-- Evento DOM, é tudo que vai acontecer com o elemento do meu HTML, nesse caso a div -->
+<!-- eventos sao códigos que serão executados só quando o evento ocorrer -->
+<!-- obs, a gente usa  o addlistener para "despoluir" o html e tirar o evento que fica na id area que chama a função ex onmouseenter/out etc -->
+<script>
+
+    
+var a = window.document.getElementById('area')
+a.addEventListener('click', clicar)
+a.addEventListener('mouseenter', entrar)
+a.addEventListener('mouseout', sair)
+
+ function clicar() {   
+  a.innerHTML = 'Clicou!'
+  a.style.background = 'red'
+    }
+
+   
+ function entrar(){
+   a.innerHTML = 'Entrou!'
+    }
+
+ function sair(){
+   a.innerHTML = 'Saiu!'
+   a.style.background = 'green'
+ }
+    </script>
+    </body>
+    </html>
