@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+
+        const pessoa = {
+          nome: 'Scarlett',
+          idade : '26',
+          endereco : {
+              rua : 'Av-Brasil',
+              numero : '188',
+          } };
+
+          //atribuição via desestrururação (Objetos)
+          //const{nome, endereco} = pessoa
+          //const{endereco:{ rua, numero}} = pessoa SE EU QUISER EXIBIR APENAS A RUA E O ENDERECO
+           //const{endereco:{ rua, numero}, endereco } = pessoa //SE EU QUISER EXIBIR O EDEREÇO INTEIRO
+
+           const {nome, ...resto} = pessoa;
+
+          console.log(resto);
+    </script>
+</body>
+</html>

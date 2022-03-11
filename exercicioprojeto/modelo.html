@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hora do dia</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body onload="carregar()">
+    <header>
+        <h1 id ="falar"></h1>
+        <section>
+            
+            <div id="msg">aqui vai aparecer a hora</div>
+            
+            <div>
+             <img id="imagem"  style="border-radius: 50%" width="250" height="250"  src="" alt="dia" width="250px width=250px">
+            </div>
+            
+        </section>
+        <footer>
+            <p>&copy; Curso em vídeo</p>
+        </footer>
+    </header>
+    
+    <script>
+     
+     
+   function carregar(){
+
+    var msg = window.document.getElementById('msg')
+    var img = window.document.getElementById('imagem')
+    var falar = window.document.getElementById('falar')
+
+    var data = new Date();
+    var hora = data.getHours()  //var hora = data.toLocaleTimeString()
+    var minutos = data.getMinutes()
+    var segundo = data.getSeconds()
+    msg.innerText = `Agora são ${hora} horas e ${minutos} minutos e ${segundo} segundos`
+  
+
+    if (hora >= 0 &&hora <=12){
+      
+        img.src = './img/manha.jpg'
+        falar.innerHTML += 'BOM DIA!'
+        
+        document.querySelector('section').style.background = '#78c6a3'
+        document.querySelector('header').style.color = '#036666'
+        
+        document.body.style.backgroundImage = "url('./img/cafe.jpg')";
+        document.body.style.backgroundPosition = "center";
+        
+        
+   
+    }else if (hora >= 12 &&hora <=18){
+        img.src = './img/tarde.jpg'
+        falar.innerHTML += 'BOA TARDE!'
+        
+        document.querySelector('section').style.background = '#e36414'
+        document.querySelector('header').style.color = '#9a031e'
+        
+        document.body.style.backgroundImage = "url('./img/tarde.jpg')";
+        document.body.style.backgroundPosition = "center";
+        
+    
+    }else{
+        img.src = './img/noite.jpg'
+        falar.innerHTML += 'BOA NOITE!'
+        
+        document.querySelector('section').style.background = '#003566'
+        document.querySelector('header').style.color = '#b6ccfe'
+        
+
+        document.body.style.backgroundImage = "url('./img/noitee.jpg')";
+        document.body.style.backgroundPosition = "center";
+      
+        
+  }
+}
+
+
+
+function alterarHora() {
+ 
+    var data = new Date(); var hora = data.getHours()  //var hora = data.toLocaleTimeString()
+    var minutos = data.getMinutes()
+    var segundo = data.getSeconds()
+    msg.innerText = `Agora são ${hora} horas e ${minutos} minutos e ${segundo} segundos`
+}
+
+setInterval(alterarHora, 1000);
+
+
+
+
+    </script>
+</body>
+</html>

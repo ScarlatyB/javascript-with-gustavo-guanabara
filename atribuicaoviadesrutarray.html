@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        //Atribuição via desestruturação (Arrays)
+
+        // let a = 'A' //B
+        // let b = 'B' //C
+        // let c = 'C' //A
+
+        // [a, b , c] = [1, 2 , 3];
+
+        //outra forma de fazer
+
+        // let a = 'A' //B
+        // let b = 'B' //C
+        // let c = 'C' //A
+        
+        // const letras = [b, c , a];
+        // [a, b , c] = letras;
+
+        // console.log(a, b, c);
+
+        // //eu joguei o valor da variável letras p varíavel a,b,c e agora eles valem b,c,a
+
+
+        // ...rest ...spread = pegar o resto
+
+        // const numeros = [1000, 2000, 3000, 4000, 5000, 6000, 7, 8, 9];
+        // const [primeiroNumero, segundoNumero, ...resto] = numeros; //crio uma variável com o resto
+        // console.log('primeiroNumero, segundoNumero');
+        // console.log('resto') //resto do que sobrou
+
+        //se eu quero pular o numero eu coloco entre as vírgulas vazio
+        // const numeros = [1000, 2000, 3000, 4000, 5000, 6000, 7, 8, 9];
+        // const [primeiro, ,terceiro, , sexto] = numeros; //crio uma variável com o resto
+        // console.log('primeiro, segundo, terceiro, sexto');
+        // console.log('resto')
+
+                      //    0           1           2
+                      // 0  1  2     0  1  2    0  1  3 
+        
+        // const numeros = [[1, 2, 3], [4, 5, 6], [7, 8, 9] ]
+        // console.log(numeros[1],[0])
+
+           //    0           1           2
+                      // 0  1  2     0  1  2    0  1  3 
+        
+        const numeros = [[1, 2, 3], [4, 5, 6], [7, 8, 9] ]
+        const [lista1, lista2, lista3] = numeros;
+        console.log(lista3)
+    </script>
+</body>
+</html>

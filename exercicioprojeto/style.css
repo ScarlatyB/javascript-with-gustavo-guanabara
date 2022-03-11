@@ -1,0 +1,45 @@
+
+
+body{
+  
+  font: normal 15pt Arial;
+  opacity: 0.9;
+ 
+}
+
+header{
+ /* color: rgb(155, 173, 192); */
+ text-align: center;
+ 
+
+ 
+}
+
+div{
+    text-align: center;
+    
+}
+section{
+    border-radius: 10px;
+    padding-top: 45px;
+    padding-bottom: 50px ;
+    width: 500px;
+    margin: auto;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.363);
+    
+
+}
+
+footer{
+    color: aliceblue;
+    text-align: center;
+    font-style: italic;
+    
+}
+
+h1{
+    text-shadow: 7px 7px 10px #eee7eb;
+    
+}
+
+
