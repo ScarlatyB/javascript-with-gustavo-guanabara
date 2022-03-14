@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificador de Idade</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap"
+    
+<body>
+    <header>
+        <h1>Verificador de Idade</h1>
+
+    </header>
+    <section>
+        <div>
+            <p>Ano de Nascimento:
+                <input type="number" name="txtano" id="txtano" min="0">
+            </p>
+            <p>
+                Sexo:
+                <input type="radio" name="radsex" id="mas" checked>
+                <label for="mas">Masculino</label>
+                <input type="radio" name="radsex" id="fem">
+                <label for="fem">Feminino</label>
+            </p>
+            <p>
+                <input  type="button" value="verificar" id="btn" onclick="verificar()">
+            </p>
+ 
+        </div>
+        <div id="res">
+            Preencha dos dados acima para ver o resultado!
+        </div>
+
+    </section>
+    <footer>
+        <p>&copy; Scarlaty By Curso em Vídeo</p>
+
+    </footer>
+  
+  <script>
+   
+   function verificar(){
+      var data = new Date() //pegar a data atual
+      var ano = data.getFullYear() //ano atual
+
+      var forano = document.getElementById('txtano')
+      var res = document.querySelector('div#res')
+      var btn = document.getElementById('input#btn')
+
+      //verificar se o ano tá vazio ou se ele é maior do que o ano atual
+    if (forano.value.length == 0 || Number(forano.value) > ano) {
+        window.alert('[ERRO!] Verifique os dados e tente novamente!');
+    
+    }else{
+        var fsex = document.getElementsByName('radsex')
+        var idade = ano - Number(forano.value)
+       //pra encontrar o gênero
+        var gênero = ''
+       
+        var img = document.createElement('img')//criar tag p img
+        img.setAttribute('id', 'foto') //criar uma id p essa foto obs: seria a msm coisa de criar uma tag no HTML
+       
+        if (fsex[0].checked){
+            gênero = 'masculino'
+            document.querySelector('section').style.background = '#48cae4'  //p mudar a section p azul
+            
+            if(idade >=0 &&idade <=14){
+                //Criança
+                img.setAttribute('src', 'foto-bebe-m.png')
+                document.body.style.backgroundImage = "url('https://img.freepik.com/vetores-gratis/ceu-azul-com-neve-e-nuvens-fundo-do-bebe_160081-1164.jpg?w=826')";
+                
+            }else if(idade >=15 &&idade <=30){
+                //Jovem
+                img.setAttribute('src', 'foto-jovem-m.png')
+                document.body.style.backgroundImage = "url('./img/skate.jpg')";
+                document.body.style.backgroundPosition = "center";
+            }else if(idade >=31 &&idade <= 59) {
+                //Adulto
+                img.setAttribute('src', 'foto-adulto-m.png')
+           
+            }else{
+                //idoso
+                img.setAttribute('src', 'foto-idoso-m.png')
+                document.body.style.backgroundColor = "#bc8a5f"
+            }
+       
+       
+        }else if (fsex[1].checked){
+            gênero = 'feminino'
+            document.querySelector('section').style.background = '#f5cac3'  //p mudar a section p azul
+            
+            if(idade >=0 &&idade <=14){
+                //Criança
+                 
+                img.setAttribute('src', 'foto-bebe-f.png')
+                document.body.style.backgroundImage = "url('https://img.freepik.com/vetores-gratis/padrao-perfeito-com-coracoes-e-estrelas-de-nuvens-de-bebe-cupido-no-fundo-rosa-dia-dos-namorados_538002-697.jpg?w=740')";
+                
+            
+                }else if(idade >=15 &&idade <=30){
+                //Jovem
+                img.setAttribute('src', 'foto-jovem-f.png')
+                document.body.style.backgroundImage = "url('https://img.elo7.com.br/product/zoom/2473DC3/papel-de-parede-menina-bailarinas-delicado-autocolante-papel-de-parede-quarto-jovem.jpg')";
+            }else if(idade >=31 &&idade <= 59){
+                //Adulta
+                img.setAttribute('src', 'foto-adulto-f.png')
+                document.body.style.backgroundImage = "url('https://img.freepik.com/vetores-gratis/seamless-woman-sapatos-modernos-sketch-pattern-background-vector-illustration_1284-1978.jpg?t=st=1647226504~exp=1647227104~hmac=746e18e6141a596d36a829d11a79217fdde319266aa5a5b2cf06281154cfab60&w=740')";
+            }else{
+                //idosa
+                img.setAttribute('src', 'foto-idoso-f.png')
+                document.body.style.backgroundColor= "#bc8a5f"
+            }
+        }
+        
+        res.style.textAlign = 'Center'  //centralizar o resultado
+        res.innerHTML = `<strong>Detectamos uma pessoa do gênero ${gênero}, com ${idade} anos.<\strong>`
+        res.appendChild(img) //adc a foto
+        btn.style.backgroundColor = '#8d99ae'
+       
+
+       
+
+}
+   }
+
+
+    </script>
+
+
+</body>
+</html>
