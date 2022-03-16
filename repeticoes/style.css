@@ -1,0 +1,70 @@
+body{
+  
+    font-family: 'Indie Flower', cursive;
+    opacity: 0.9;
+    background-color: #ffb703;
+    font-weight: 700;
+    
+    
+  }
+  
+  header{
+   /* color: rgb(155, 173, 192); */
+   text-align: center;
+   
+  
+  
+   
+  }
+  
+  div{
+      text-align: center;
+      color: #ffea00;
+      
+      
+  }
+  section{
+      border-radius: 10px;
+      padding-top: 45px;
+      padding-bottom: 50px ;
+      width: auto;
+      margin: auto;
+      background-color: #1b4332;
+      
+  
+  }
+  
+  footer{
+      color: #e9d8a6;
+      text-align: center;
+      font-style: italic;
+      text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+      
+  }
+  
+  h1{
+     color: #1b4332;
+    /* -webkit-text-stroke: 1px #db222a; */
+    text-shadow: -1px 0 #d00000, 0 1px #d00000, 1px 0 #d00000, 0 -1px #d00000;
+     text-transform: uppercase;
+  }
+
+  #btn{
+    background-color: #889696; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }
+  
+  #btn:hover {
+    background-color: #90be6d; /* Green */
+    color: #001219;
+  }
+
+  p{
+      color: #ffea00;
+  }

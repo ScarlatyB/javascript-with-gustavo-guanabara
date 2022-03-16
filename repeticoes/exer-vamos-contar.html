@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contando</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Vamos contar</h1>
+    </header>
+    <section>
+        <div id="dados">
+            <p>Inicio:<input type="number" name="inicio" id="txti"></p>
+            <p>Fim:<input type="number" name="fim" id="txtf"></p>
+            <p>Passo:<input type="number" name="passo" id="txtp"></p>
+            <input type="button" value="contar" id="btn" onclick="contar()">
+        </div>
+        <div id="res">
+            
+        </div>
+        <footer>
+            &copy; Sc  by Curso em vídeo
+        </footer>
+    </section>
+    
+    <script>
+        function contar(){
+            var inicio = document.getElementById('txti')
+            var fim = document.getElementById('txtf')
+            var passo = document.getElementById('txtp')
+            var res = document.getElementById('res')
+
+            if (inicio.value.length == 0 ||fim.value.length == 0 || passo.value.length == 0){
+                // alert('[ERRO!] FALTAM DADOS!')
+                res.innerHTML += 'Impossível contar!'
+            }else{
+                res.innerHTML = 'contando: <br> ' 
+                //convertendo os dados p número
+                var i = Number(inicio.value)
+                var f = Number(fim.value)
+                var p = Number(passo.value)
+
+                if(p <= 0 ||  Number(p.value) <=''){
+                    alert('[ERRO!] passo inválido! considerando passo 1!')
+                    p = 1
+                }
+
+            if(i < f){
+
+                    //contagem crescente
+                    for(let contador = i ; contador <=f; contador += p){
+                    res.innerHTML += `${contador} \u{1F449}`
+
+                    }
+
+                
+                    
+                }else{
+                    //contagem regressiva
+                    for(let contador = i ; contador >=f; contador -= p){
+                     
+                    res.innerHTML += `${contador} \u{1F449}`
+                }
+
+                
+            }
+
+            res.innerHTML += `\u{1F3C1}`
+        }
+    }
+    </script>
+</body>
+</html>
